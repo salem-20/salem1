@@ -1,0 +1,10 @@
+from django.contrib import admin
+from django.urls import path, include
+from restaurant import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('restaurant.urls')), # Connects to app urls
+    path('auth/', include('djoser.urls')), # Djoser Endpoints
+    path('auth/', include('djoser.urls.authtoken')), # Token Endpoints
+]
